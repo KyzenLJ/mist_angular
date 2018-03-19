@@ -1,0 +1,66 @@
+<div class="row">
+
+  <div class="col-12">
+    <h1>MODIFICATION DES DROITS D'UN AGENT</h1>
+  </div>
+
+</div>
+
+<form>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-6">
+
+      <h3>Choisissez un agent</h3>
+
+      <div class="text-center">
+
+        <mat-form-field>
+          <mat-select placeholder="Agent">
+            <mat-option *ngFor="let agent of agents" [value]="agent">
+              {{ agent }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+     
+      </div>
+
+      <div class="text-center">
+
+          <button class="btn btn-info justify-content-center" type="submit">Création d'un agent</button>
+
+      </div>
+
+    </div>
+
+  <!-- CHOIX DU PROFIL -->
+
+  <div class="col-6">
+
+    <h3>Choisissez le type de profil pour l'agent</h3>
+
+    <div class="text-center">
+
+        <mat-radio-group  [(ngModel)]="profil">
+            <mat-radio-button *ngFor="let profil of profils" [value]="profil">
+              {{profil}}
+            </mat-radio-button>
+          </mat-radio-group>
+          
+
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+</form>
+
+<!-- CREATION AGENT -->
+
+    <app-creation-agent></app-creation-agent>
