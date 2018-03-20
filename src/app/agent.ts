@@ -2,7 +2,7 @@ export class Agent {
 
 nom='';
 prenom='';
-mail='';
+email='';
 motdepasse='';
 
 }

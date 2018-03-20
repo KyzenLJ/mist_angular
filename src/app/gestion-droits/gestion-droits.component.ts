@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gestion-droits.component.css']
 })
 export class GestionDroitsComponent implements OnInit {
-
-  profil: string;
   
   profils = [
     'Profil 1',
@@ -27,7 +25,9 @@ export class GestionDroitsComponent implements OnInit {
    
     constructor() { }
 
-    ngOnInit() { } 
+    ngOnInit() { 
+      
+    } 
 
 
   }

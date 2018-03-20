@@ -8,59 +8,61 @@
 
 <form>
 
-<div class="container">
+  <div class="container">
 
-  <div class="row">
+    <div class="row">
 
-    <div class="col-6">
+      <div class="col-6">
 
-      <h3>Choisissez un agent</h3>
+        <h3>Choisissez un agent</h3>
 
-      <div class="text-center">
+        <div class="text-center">
 
-        <mat-form-field>
-          <mat-select placeholder="Agent">
-            <mat-option *ngFor="let agent of agents" [value]="agent">
-              {{ agent }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-     
-      </div>
+          <mat-form-field>
+            <mat-select placeholder="Agent">
+              <mat-option *ngFor="let agent of agents" [value]="agent">
+                {{ agent }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
 
-      <div class="text-center">
-
-          <button class="btn btn-info justify-content-center" type="submit">Création d'un agent</button>
+        </div>
 
       </div>
 
-    </div>
+      <div class="col-6">
 
-  <!-- CHOIX DU PROFIL -->
+        <h3>Choisissez le type de profil pour l'agent</h3>
 
-  <div class="col-6">
+        <div class="text-center">
 
-    <h3>Choisissez le type de profil pour l'agent</h3>
-
-    <div class="text-center">
-
-        <mat-radio-group  [(ngModel)]="profil">
+          <mat-radio-group>
             <mat-radio-button *ngFor="let profil of profils" [value]="profil">
               {{profil}}
             </mat-radio-button>
           </mat-radio-group>
-          
+
+
+        </div>
+
+      </div>
+
+      <div class="col-12 text-center">
+
+        <input type="submit" class="btn btn-info justify-content-center" value="Valider">
+
+      </div>
 
     </div>
 
   </div>
 
-</div>
-
-</div>
-
 </form>
 
 <!-- CREATION AGENT -->
 
-    <app-creation-agent></app-creation-agent>
+<div id="toto">
+
+  <app-creation-agent></app-creation-agent>
+
+</div>
