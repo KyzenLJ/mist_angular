@@ -13,11 +13,9 @@ import { AgentService } from '../agent.service'
 
 export class CreationAgentComponent implements OnInit {
 
-  ngOnInit() { }
-
   agent: Agent = new Agent();
 
-
+  ngOnInit() { }
 
   constructor(private router: Router, private agentService: AgentService) { }
 

@@ -14,7 +14,7 @@ const httpOptions = {
 @Injectable()
 export class AgentService {
 
-  constructor(private http:HttpClient) {}
+  constructor(private http:  HttpClient) {}
 
   private agentUrl = 'http://localhost:8080/api/utilisateur';
 
@@ -22,9 +22,14 @@ export class AgentService {
     console.log('creation agent');
     return this.http.post<Agent>(this.agentUrl, agent, httpOptions);
   }
- 
-  public getAllAgent(): Observable<Agent []>{
+
+  public getAllAgent(): Observable<Agent []> {
     return this.http.get<Agent[]>(this.agentUrl);
+  }
+
+  public deleteAgent(id: number): Observable<Agent> {
+    const url = `${this.agentUrl}/${id}`;
+    return this.http.delete<Agent>(url, httpOptions);
   }
 
 }

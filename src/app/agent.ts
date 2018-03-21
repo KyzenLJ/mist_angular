@@ -1,9 +1,11 @@
 export class Agent {
 
-nom='';
-prenom='';
-email='';
-motdepasse='';
-profil='';
+
+id: number;
+nom = '';
+prenom = '';
+email = '';
+motdepasse = '';
+profil = Profil[];
 
 }
