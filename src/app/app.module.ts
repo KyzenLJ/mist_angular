@@ -30,6 +30,8 @@ import { Page404Component } from './page-404/page-404.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { AgentService } from './agent.service';
+import { ModifAffaireComponent } from './modif-affaire/modif-affaire.component';
+import { SuppressionAgentComponent } from './suppression-agent/suppression-agent.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { AgentService } from './agent.service';
     AffaireFormComponent,
     CreationAgentComponent,
     Page404Component,
+    ModifAffaireComponent,
+    SuppressionAgentComponent,
     ],
 
   imports: [

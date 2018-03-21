@@ -36,12 +36,13 @@
 
         <div class="text-center">
 
-          <mat-radio-group>
-            <mat-radio-button *ngFor="let profil of profils" [value]="profil">
-              {{profil}}
-            </mat-radio-button>
-          </mat-radio-group>
-
+          <mat-form-field>
+            <mat-select placeholder="Profil">
+              <mat-option *ngFor="let profil of profils" [value]="profil">
+                {{ profil }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
 
         </div>
 
@@ -61,8 +62,16 @@
 
 <!-- CREATION AGENT -->
 
-<div id="toto">
+<div>
 
   <app-creation-agent></app-creation-agent>
+
+</div>
+
+<!-- SUPPRESSION AGENT -->
+
+<div>
+
+  <app-suppression-agent></app-suppression-agent>
 
 </div>
