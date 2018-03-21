@@ -1,36 +1,45 @@
 import { Component, OnInit } from '@angular/core';
+import { Agent } from '../agent';
+import { AgentService } from '../agent.service';
 
 @Component({
-  selector: 'app-gestion-droits',
-  templateUrl: './gestion-droits.component.html',
-  styleUrls: ['./gestion-droits.component.css']
+selector: 'app-gestion-droits',
+templateUrl: './gestion-droits.component.html',
+styleUrls: ['./gestion-droits.component.css']
 })
 export class GestionDroitsComponent implements OnInit {
-  
-  profils = [
-    'Profil 1',
-    'Profil 2',
-    'Profil 3',
-    'Profil 4',
-  ];
 
-  agent: string;
+estSelect = false;
+public agents: Agent[];
+profil: string;
+agentSelected: Agent;
+profils = [
+'Profil 1',
+'Profil 2',
+'Profil 3',
+'Profil 4',
+];
 
-  agents = [
-    'Agent 1',
-    'Agent 2',
-    'Agent 3',
-    'Agent 4',
-  ];
-   
-    constructor() { }
+constructor(private agentService: AgentService) { }
 
-    ngOnInit() { 
-      
-    } 
+ngOnInit() {
+  this.getAllAgent();
+}
 
+getAllAgent(): void {
+  this.agentService.getAllAgent().subscribe(agents => this.agents = agents);
+}
 
-  }
+deleteAgent(){
+  this.agentService.deleteAgent(this.agentSelected.id).subscribe(() => this.getAllAgent());
+}
+
+agentSelectionne(agent: Agent) {
+  this.agentSelected = agent;
+  this.estSelect = true;
+}
+
+}
 
 
 

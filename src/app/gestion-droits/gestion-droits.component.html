@@ -20,16 +20,17 @@
 
           <mat-form-field>
             <mat-select placeholder="Agent">
-              <mat-option *ngFor="let agent of agents" [value]="agent">
-                {{ agent }}
+              <mat-option *ngFor="let agent of agents" [value]="agent.nom" (click)="agentSelectionne(agent)">
+                {{ agent.nom }} {{ agent.prenom}}
               </mat-option>
             </mat-select>
           </mat-form-field>
+          <div *ngIf="estSelect" class="table-cell button-cell"><button (click)="deleteAgent()">Delete</button></div>
 
         </div>
 
       </div>
-
+      
       <div class="col-6">
 
         <h3>Choisissez le type de profil pour l'agent</h3>
@@ -41,7 +42,7 @@
               {{profil}}
             </mat-radio-button>
           </mat-radio-group>
-
+          
 
         </div>
 
