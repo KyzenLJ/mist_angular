@@ -27,4 +27,8 @@ export class AgentService {
     return this.http.get<Agent[]>(this.agentUrl);
   }
 
+  public deleteAgent(agent: Agent): Observable<Agent> {
+    return this.http.post<Agent>(this.agentUrl, agent, httpOptions);
+  }
+
 }

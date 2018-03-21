@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Agent } from '../agent';
+import { AgentService } from '../agent.service';
 
 @Component({
   selector: 'app-gestion-droits',
@@ -7,6 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class GestionDroitsComponent implements OnInit {
+
+estSelect = false;
+public agents: Agent[];
+profil: string;
+agentSelected: Agent;
   
   profils = [
     'Profil 1',
@@ -14,24 +21,27 @@ export class GestionDroitsComponent implements OnInit {
     'Profil 3',
     'Profil 4',
   ];
-
-  agent: string;
-
-  agents = [
-    'Agent 1',
-    'Agent 2',
-    'Agent 3',
-    'Agent 4',
-  ];
    
-    constructor() { }
+    constructor(private agentService: AgentService) { }
 
     ngOnInit() { 
-      
-    } 
+      this.getAllAgent();
+      }
 
+    getAllAgent(): void {
+      this.agentService.getAllAgent().subscribe(agents => this.agents = agents);
+    }
 
-  }
+    deleteAgent() {
+      this.agentService.deleteAgent(this.agentSelected.id).subscribe(() => this.getAllAgent());
+    }
+
+    agentSelectionne(agent: Agent) {
+      this.agentSelected = agent;
+      this.estSelect = true;
+    }
+
+}
 
 
 
