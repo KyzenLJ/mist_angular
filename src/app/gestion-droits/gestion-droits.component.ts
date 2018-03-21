@@ -30,7 +30,7 @@ getAllAgent(): void {
   this.agentService.getAllAgent().subscribe(agents => this.agents = agents);
 }
 
-deleteAgent(){
+deleteAgent() {
   this.agentService.deleteAgent(this.agentSelected.id).subscribe(() => this.getAllAgent());
 }
 

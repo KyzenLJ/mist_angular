@@ -21,7 +21,7 @@
           <mat-form-field>
             <mat-select placeholder="Agent">
               <mat-option *ngFor="let agent of agents" [value]="agent.nom" (click)="agentSelectionne(agent)">
-                {{ agent.nom }} {{ agent.prenom}}
+                {{ agent.id }} {{ agent.prenom}}
               </mat-option>
             </mat-select>
           </mat-form-field>

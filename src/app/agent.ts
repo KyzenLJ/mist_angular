@@ -1,9 +1,9 @@
 export class Agent {
 
-id= 0;
-nom='';
-prenom='';
-email='';
-motdepasse='';
+id: number;
+nom = '';
+prenom = '';
+email = '';
+motdepasse = '';
 
 }
