@@ -15,10 +15,12 @@ import { ArmeFormComponent } from './arme-form/arme-form.component';
 import { VehiculeFormComponent } from './vehicule-form/vehicule-form.component';
 import { AffaireFormComponent } from './affaire-form/affaire-form.component';
 import { Page404Component } from './page-404/page-404.component';
+import {MatSelectModule} from '@angular/material/select';
+import { SuppressionAgentComponent } from './suppression-agent/suppression-agent.component';
 
 import { RouterModule, Routes } from '@angular/router';
 
-import {MatSelectModule} from '@angular/material/select';
+
 
 const routes: Routes = [
 
@@ -47,6 +49,9 @@ const routes: Routes = [
     { path: 'gestion-affaire', component: GestionAffaireComponent },
 
     { path: 'hotlist', component: HotlistComponent },
+
+    { path: 'suppression-agent', component: SuppressionAgentComponent }
+
   ]
 
 },

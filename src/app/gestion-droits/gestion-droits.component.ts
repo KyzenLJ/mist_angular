@@ -7,6 +7,7 @@ selector: 'app-gestion-droits',
 templateUrl: './gestion-droits.component.html',
 styleUrls: ['./gestion-droits.component.css']
 })
+
 export class GestionDroitsComponent implements OnInit {
 
 estSelect = false;
