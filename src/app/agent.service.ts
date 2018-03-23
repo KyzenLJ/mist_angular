@@ -27,9 +27,14 @@ export class AgentService {
     return this.http.get<Agent[]>(this.agentUrl);
   }
 
+<<<<<<< HEAD
+  public deleteAgent(agent: Agent): Observable<Agent> {
+    return this.http.post<Agent>(this.agentUrl, agent, httpOptions);
+=======
   public deleteAgent(id: number): Observable<Agent> {
     const url = `${this.agentUrl}/${id}`;
     return this.http.delete<Agent>(url, httpOptions);
+>>>>>>> 17a96287dacce8c6cad05caf9839fc9915b525f1
   }
 
   public updateAgent(id: number, agent: Agent): Observable<any> {
