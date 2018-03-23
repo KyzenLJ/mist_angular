@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Agent } from '../agent';
+import { AgentService } from '../agent.service';
 
 @Component({
   selector: 'app-suppression-agent',
@@ -7,21 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuppressionAgentComponent implements OnInit {
 
-  agent: string;
+  agentSelected: Agent;
+  agents: Agent[];
 
-  agents = [
-    'Agent 1',
-    'Agent 2',
-    'Agent 3',
-    'Agent 4',
-  ];
-
-  constructor() { }
+  constructor(private agentService : AgentService) { }
 
   ngOnInit() {
-    
+    this.getAllAgents();
+
+    }
+
+  getAllAgents(): void{
+    this.agentService.getAllAgent().subscribe((agents) => this.agents = agents );
   }
 
- 
+  agentSelect(agent){
+    this.agentSelected =  agent;
+  }
+
+  deleteAgent(){
+    this.agentService.deleteAgent(this.agentSelected.id).subscribe(() => this.getAllAgents());
+  }
+
+
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Agent } from '../agent';
 import { AgentService } from '../agent.service';
+import { ProfilServiceService } from '../profil-service.service';
 
 @Component({
 selector: 'app-gestion-droits',
@@ -14,14 +15,9 @@ estSelect = false;
 public agents: Agent[];
 profil: string;
 agentSelected: Agent;
-profils = [
-'Profil 1',
-'Profil 2',
-'Profil 3',
-'Profil 4',
-];
+profils = [];
 
-constructor(private agentService: AgentService) { }
+constructor(private agentService: AgentService, private profilService: ProfilServiceService) { }
 
 ngOnInit() {
   this.getAllAgent();
@@ -38,6 +34,10 @@ deleteAgent() {
 agentSelectionne(agent: Agent) {
   this.agentSelected = agent;
   this.estSelect = true;
+}
+
+updateProfil(){
+  this.agentService.updateAgent(this.agentSelected.id, this.agentSelected).subscribe(() => this.getAllAgent());
 }
 
 }

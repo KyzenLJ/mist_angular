@@ -1,3 +1,5 @@
+import { Profil } from './profil';
+
 export class Agent {
 
 
@@ -6,6 +8,6 @@ nom = '';
 prenom = '';
 email = '';
 motdepasse = '';
-profil = Profil[];
+profil: Profil ;
 
 }

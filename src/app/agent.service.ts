@@ -32,4 +32,11 @@ export class AgentService {
     return this.http.delete<Agent>(url, httpOptions);
   }
 
+  public updateAgent(id: number, agent: Agent): Observable<any> {
+    const url = `${this.agentUrl}/${id}`;
+    return this.http.put(url, agent, httpOptions);
+  }
+
+
+
 }
