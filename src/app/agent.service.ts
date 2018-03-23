@@ -37,4 +37,11 @@ export class AgentService {
 >>>>>>> 17a96287dacce8c6cad05caf9839fc9915b525f1
   }
 
+  public updateAgent(id: number, agent: Agent): Observable<any> {
+    const url = `${this.agentUrl}/${id}`;
+    return this.http.put(url, agent, httpOptions);
+  }
+
+
+
 }

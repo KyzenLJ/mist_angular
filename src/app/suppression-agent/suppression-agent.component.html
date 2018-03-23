@@ -20,8 +20,8 @@
 
           <mat-form-field>
             <mat-select placeholder="Agent">
-              <mat-option *ngFor="let agent of agents" [value]="agent">
-                {{ agent }}
+              <mat-option *ngFor="let agent of agents" [value]="agent" (click)="agentSelect(agent)">
+                {{ agent.nom }} {{agent.prenom}}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -32,7 +32,7 @@
       
       <div class="col-12 text-center">
 
-        <input type="submit" class="btn btn-danger justify-content-center" value="Suppression de l'agent">
+        <input type="submit" class="btn btn-danger justify-content-center" (click)="deleteAgent()" value="Suppression de l'agent"> 
 
       </div>
 

@@ -32,6 +32,7 @@ import { HttpModule } from '@angular/http';
 import { AgentService } from './agent.service';
 import { ModifAffaireComponent } from './modif-affaire/modif-affaire.component';
 import { SuppressionAgentComponent } from './suppression-agent/suppression-agent.component';
+import { ProfilServiceService } from './profil-service.service';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,7 @@ import { SuppressionAgentComponent } from './suppression-agent/suppression-agent
 
   ],
   
-  providers: [AgentService],
+  providers: [AgentService, ProfilServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
