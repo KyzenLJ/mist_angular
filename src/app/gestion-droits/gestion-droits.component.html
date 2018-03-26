@@ -25,8 +25,7 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
-          <div *ngIf="estSelect" class="table-cell button-cell"><button (click)="deleteAgent()">Delete</button></div>
-
+         
         </div>
 
       </div>
@@ -39,12 +38,11 @@
 
           <mat-form-field>
             <mat-select placeholder="Profil">
-              <mat-option *ngFor="let profil of profils" [value]="profil">
-                {{ profil }}
+              <mat-option *ngFor="let profil of profils" [value]="profil" (click)="updateProfil(profil)">
+                {{ profil.libelle }}
               </mat-option>
             </mat-select>
           </mat-form-field>
-
 
         </div>
 

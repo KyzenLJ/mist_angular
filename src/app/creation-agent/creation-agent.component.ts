@@ -39,4 +39,6 @@ export class CreationAgentComponent implements OnInit {
   loadProfil(): void {
     this.profilService.getAllProfil().subscribe((profil) => this.profils = profil);
   }
+
+  
 }
